@@ -5,20 +5,27 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server.js"
+    "start": "nodemon ./server.js",
+    "startPG": "pg_ctl -D /usr/local/var/postgres start",
+    "stressTest": "k6 run k6loadtest.js",
+    "stress5": "k6 run k6loadtest.js && sleep 120 k6 run k6loadtest.js && sleep 120 k6 run k6loadtest.js && sleep 120 k6 run k6loadtest.js && sleep 120 k6 run k6loadtest.js && sleep 120",
+    "loginAWS": "ssh -i ../../../../.ssh/aws-key.pem ec2-user@ec2-13-56-164-56.us-west-1.compute.amazonaws.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FiveFinance/proxy_jay.git"
+    "url": "git+https://github.com/stock-it/proxy_earnings.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FiveFinance/proxy_jay/issues"
+    "url": "https://github.com/stock-it/proxy_earnings/issues"
   },
-  "homepage": "https://github.com/FiveFinance/proxy_jay#readme",
+  "homepage": "https://github.com/stock-it/proxy_earnings#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "express": "^4.16.4"
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "newrelic": "^5.7.0"
   }
 }
