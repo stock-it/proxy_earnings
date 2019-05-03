@@ -5,7 +5,7 @@ const SERVER_PORT = 3000;
 
 export const options = {
   vus: 100, 
-  duration: '30s', 
+  duration: '5m', 
 };
 
 const originalStocksArr = [
