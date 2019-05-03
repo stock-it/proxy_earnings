@@ -9,7 +9,7 @@
     "startPG": "pg_ctl -D /usr/local/var/postgres start",
     "stressTest": "k6 run k6loadtest.js",
     "stress5": "k6 run k6loadtest.js && sleep 120 k6 run k6loadtest.js && sleep 120 k6 run k6loadtest.js && sleep 120 k6 run k6loadtest.js && sleep 120 k6 run k6loadtest.js && sleep 120",
-    "loginAWS": "ssh -i ../../../../.ssh/aws-key.pem ec2-user@ec2-13-56-164-56.us-west-1.compute.amazonaws.com"
+    "loginAWS": "ssh -i ~/.ssh/aws-key.pem ec2-user@$AWSdomain"
   },
   "repository": {
     "type": "git",
