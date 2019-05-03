@@ -17,7 +17,7 @@ app.use('/stocks/:ticker', express.static(path.join(__dirname, 'public')));
 // });
 
 const axios3002 = axios.create({
-  baseURL: 'http://localhost:3002',
+  baseURL: process.env.SDCSERVICE0 || 'http://localhost:3002',
 });
 
 // const axios3003 = axios.create({
